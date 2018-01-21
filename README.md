@@ -39,3 +39,7 @@ INSTALLATION
 composer update
 
 DB расположена в migrations
+
+Авторизация
+Пользователь: admin
+Пароль: 123456
