@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use app\models\Autors;
 use app\models\Books;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use app\models\BooksHasAutor;
 use app\models\Images;
 use app\models\UploadForm;
@@ -11,11 +13,38 @@ use yii\web\UploadedFile;
 
 class BookController extends \yii\web\Controller
 {
+
+     /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' =>  ['create', 'update', 'delete'],
+                'rules' => [
+                    [
+                        'actions' => ['create', 'update', 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+        ];
+    }
     /**
      * @return string
      */
     public function actionCreate()
     {
+
 
         $model = new Books();
         $image = new UploadForm();
