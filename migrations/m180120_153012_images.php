@@ -24,8 +24,6 @@ class m180120_153012_images extends Migration
     {
         echo "m180120_153012_images cannot be reverted.\n";
 
-        $this->dropTable('images');
-
         return false;
     }
 

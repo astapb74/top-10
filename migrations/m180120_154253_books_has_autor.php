@@ -24,8 +24,6 @@ class m180120_154253_books_has_autor extends Migration
     {
         echo "m180120_154253_books_has_autor cannot be reverted.\n";
 
-        $this->dropTable('books_has_autor');
-
         return false;
     }
 

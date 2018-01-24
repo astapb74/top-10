@@ -23,23 +23,16 @@ class m180121_110934_add_autors_list extends Migration
         ];
 
         foreach ($list as $item) {
-            $autors = new Autors();
-            $autors->fio = $item;
-            $autors->save();
+            $this->insert('news', [
+                'fio' => $item,
+            ]);
         }
+
     }
 
     public function down()
     {
         echo "m180121_110934_add_autors_list cannot be reverted.\n";
-        $autors = Autors::find()
-            ->all();
-
-        foreach ($autors as $autor) {
-            $autor->delete();
-        }
-
-        return false;
     }
 
 }

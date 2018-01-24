@@ -22,8 +22,6 @@ class m180120_153540_books extends Migration
     {
         echo "m180120_153540_books cannot be reverted.\n";
 
-        $this->dropTable('books');
-
         return false;
     }
 

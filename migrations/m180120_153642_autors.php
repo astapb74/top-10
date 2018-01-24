@@ -21,8 +21,6 @@ class m180120_153642_autors extends Migration
     {
         echo "m180120_153642_autors cannot be reverted.\n";
 
-        $this->dropTable('autors');
-
         return false;
     }
 

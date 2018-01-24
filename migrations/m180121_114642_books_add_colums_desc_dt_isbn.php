@@ -20,10 +20,6 @@ class m180121_114642_books_add_colums_desc_dt_isbn extends Migration
     {
         echo "m180121_114642_books_add_colums_desc_dt_isbn cannot be reverted.\n";
 
-        $this->dropColumn('books', 'desc');
-        $this->dropColumn('books', 'dt');
-        $this->dropColumn('books', 'isbn');
-
         return false;
     }
 

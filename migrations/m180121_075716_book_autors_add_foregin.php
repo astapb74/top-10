@@ -19,9 +19,6 @@ class m180121_075716_book_autors_add_foregin extends Migration
     public function down()
     {
         echo "m180121_075716_book_autors_add_foregin cannot be reverted.\n";
-        $this->dropForeignKey('books_image');
-        $this->dropForeignKey('books_autors');
-        $this->dropForeignKey('autors_books');
 
         return false;
     }
